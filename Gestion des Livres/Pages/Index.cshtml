@@ -1,0 +1,161 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Gestion des Livres ";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Gestion des Livres</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0" Style="margin-top:-50px;">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+        <!-- Navbar Start -->
+        <div class="container-fluid nav-bar bg-transparent p-0">
+            <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
+                <a href="/Index" class="navbar-brand d-flex align-items-center text-center">
+                    <h3 class="m-0 text-primary">Gestion des Livres</h3>
+                </a>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="/Index" class="nav-item nav-link active">Home</a>
+                        <a href="/About" class="nav-item nav-link">About</a>
+                        <div class="nav-item dropdown">
+                            <a href="/Auteurs" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Auteur</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+                                <a href="/Auteurs" class="dropdown-item">Les Détails de L'Auteur</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="/Categories" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Categorie</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+                                <a href="/Categories" class="dropdown-item">Les Détails de Categorie</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="/Editeurs" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Editeur</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+                                <a href="/Editeurs" class="dropdown-item">Les Détails de L'Editeur</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="/Livres" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Livre</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+                                <a href="/Livres" class="dropdown-item">Les Détails de Livre</a>
+                            </div>
+                        </div>
+                        <form class="d-flex">
+                            <input class="form-control me-sm-1" type="search" placeholder="Rechercher" style="margin-left:50px;text-align:center;">
+                            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Rechercher</button>
+                        </form>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+        <!-- Navbar End -->
+        <!-- Header Start -->
+        <div class="container-fluid header bg-white p-0" Style="margin-top:10px">
+            <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
+                <div class="col-md-6 p-5 mt-lg-5">
+                    <h3 class="display-5 animated fadeIn mb-4"> Bienvenue Sur<span class="text-primary"><br />Gestion des Livres</span></h3>
+                    <p class="animated fadeIn mb-4 pb-2" style="font-weight:bold;color:black">Notre Application permet de simplifier et optimiser la gestion d'une bibliothèque,librairie ou collection de livres.<br> Cette application offre une plateforme centralisée permettant aux utilisateurs d'effectuer diverses opérations liées aux livres, aux auteurs, aux éditeurs et aux catégories</p>
+                    <a href="" class="btn btn-primary py-3 px-5 me-3 animated fadeIn">Get Started</a>
+                </div>
+                <div class="col-md-6 animated fadeIn">
+                    <div class="owl-carousel header-carousel">
+                        <div class="owl-carousel-item">
+                            <img class="img-fluid" src="img/gestion.jpg" alt="">
+                        </div>
+                        <div class="owl-carousel-item">
+                            <img class="img-fluid" src="img/livre.jpg" alt="">
+                        </div>
+                        <div class="owl-carousel-item">
+                            <img class="img-fluid" src="img/gestion-de-projet.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+        <!-- About Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                        <div class="about-img position-relative overflow-hidden p-5 pe-0">
+                            <img class="img-fluid w-100" src="img/livre.jpg">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                        <h3 class="mb-4">Les Informations de Gestion des Livres</h3>
+                        <p class="text-bg-light" style="font-weight:bold;font-size:15px;color:Black;">
+
+                            L'application de Gestion des Livres est une Application Web qui permet de simplifier et d'optimiser la gestion d'une bibliothèque, d'une librairie ou de toute collection de livres. Elle offre des fonctionnalités complètes visant à améliorer l'efficacité opérationnelle tout en offrant une expérience utilisateur intuitive et agréable.
+                            <br>Cette Application Permet aux utilisateurs d'ajouter rapidement de nouveaux livres ou modifier ou supprimer à la collection en fournissant des détails complets tels que le titre, l'auteur, l'éditeur, la catégorie, etc.
+                            et Aussi qui permet de Faciliter la gestion des auteurs, des éditeurs et des catégories, garantissant une organisation optimale de la collection.
+                            <br>Ainsi qu'il Intègre un système d'authentification sécurisé permettant aux utilisateurs de créer des comptes, de se connecter et de gérer leurs informations personnelles.
+                            <br>Afin que cette Application peut Offrir une fonction de recherche puissante permettant aux utilisateurs de trouver rapidement des livres en utilisant divers critères tels que le titre, l'auteur ou la catégorie.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
+
+
+

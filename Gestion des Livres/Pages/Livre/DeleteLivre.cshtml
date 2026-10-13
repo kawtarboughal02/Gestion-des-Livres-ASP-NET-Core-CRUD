@@ -1,0 +1,25 @@
+@page
+@model Gestion_des_Livres.Pages.Livre.DeleteLivreModel
+@using System.Data.SqlClient;
+@{
+    string message = "";
+    try
+    {
+        int idLivre = Convert.ToInt32(Request.Query["IdLivre"]);
+        using (SqlConnection con = new SqlConnection(AppDb.ConnectionString))
+        {
+            con.Open();
+            string sql = "delete from Livre where IdLivre=@IdLivre";
+            using (SqlCommand cmd = new SqlCommand(sql, con))
+            {
+                cmd.Parameters.AddWithValue("@IdLivre", idLivre);
+                cmd.ExecuteNonQuery();
+            }
+        }
+    }
+    catch (Exception ex)
+    {
+        message = ex.Message;
+    }
+    Response.Redirect("/Livre/Livres");
+}

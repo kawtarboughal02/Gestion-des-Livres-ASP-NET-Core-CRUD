@@ -1,0 +1,54 @@
+# .NET / ASP.NET Core
+bin/
+obj/
+out/
+publish/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# Build
+*.dll
+*.exe
+*.pdb
+[Bb]uild/
+[Rr]elease/
+[Dd]ebug/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+
+# NuGet
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+.nuget/
+
+# SQL LocalDB / SQL files artefacts
+*.mdf
+*.ldf
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
+_logs/
+
+# Temp diagnostic (anciens txt racine a ne pas publier)
+_build.txt
+_env_check*.txt
+_net.txt
+_nuget.txt
+_pkg*.txt
+_restore.txt
+_sdk_install.txt

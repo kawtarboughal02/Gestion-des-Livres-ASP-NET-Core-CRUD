@@ -1,0 +1,22 @@
+﻿@page
+@model Gestion_des_Livres.Pages.DeleteModel
+@using System.Data.SqlClient;
+@{
+    try
+    {
+        int IDAuteur = Convert.ToInt32(Request.Query["IDAuteur"]);
+        string connectionString = AppDb.ConnectionString;
+        SqlConnection con = new SqlConnection(connectionString);
+        con.Open();
+        string sql = "delete from Auteur where IDAuteur=@IDAuteur";
+        SqlCommand cmd = new SqlCommand(sql, con);
+        cmd.Parameters.AddWithValue("@IDAuteur", IDAuteur);
+        cmd.ExecuteNonQuery();
+        con.Close();
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine("Exception " + ex.ToString());
+    }
+    Response.Redirect("/Auteurs");
+}

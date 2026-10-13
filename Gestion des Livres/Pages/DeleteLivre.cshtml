@@ -1,0 +1,27 @@
+﻿@page
+@model DeleteLivreModel
+@    using System.Data.SqlClient;
+
+
+@{
+    try
+    {
+        string IdLivre = Request.Query["IdLivre"]!;
+        string connectionString = AppDb.ConnectionString;
+        using (SqlConnection con = new SqlConnection(connectionString))
+        {
+            con.Open();
+            string sql = "delete from Livre where IdLivre=@IdLivre";
+            using (SqlCommand cmd = new SqlCommand(sql, con))
+            {
+                cmd.Parameters.AddWithValue("@IdLivre", IdLivre);
+                cmd.ExecuteNonQuery();
+            }
+        }
+        Response.Redirect("/Livre/Livres");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine("Exception " + ex.ToString());
+    }
+}

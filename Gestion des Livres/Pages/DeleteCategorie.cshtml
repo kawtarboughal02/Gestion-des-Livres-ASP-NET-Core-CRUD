@@ -1,0 +1,23 @@
+﻿@page
+@model Gestion_des_Livres.Pages.DeleteCategorieModel
+@using System.Data.SqlClient;
+@{
+    try
+    {
+        int IDCat = Convert.ToInt32(Request.Query["IDCat"]);
+        string connectionString = AppDb.ConnectionString;
+        SqlConnection con = new SqlConnection(connectionString);
+        con.Open();
+        string sql = "delete from Categorie where IDCat=@IDCat";
+        SqlCommand cmd = new SqlCommand(sql, con);
+        cmd.Parameters.AddWithValue("@IDCat", IDCat);
+        cmd.ExecuteNonQuery();
+        con.Close();
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine("Exception " + ex.ToString());
+    }
+    Response.Redirect("/Categories");
+}
+

@@ -1,0 +1,40 @@
+﻿@page
+@model Gestion_des_Livres.Pages.Livre.LivresModel
+@{
+}
+<br>
+<h2>Livre</h2>
+<a class='btn btn-primary btn-sm' href='/CreateLivre'>Add Livre</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Titre</th>
+            <th>ISBN</th>
+            <th>ID Editeur</th>
+            <th>ID Auteur</th>
+            <th>ID Categorie</th>
+            <th>Description</th>
+            <th>Annee Edition</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ListLivre)
+        {
+            <tr>
+                <td>@item.IdLivre</td>
+                <td>@item.Titre</td>
+                <td>@item.ISBN</td>
+                <td>@item.IDEditeur</td>
+                <td>@item.IDAuteur</td>
+                <td>@item.IDCat</td>
+                <td>@item.DescriptionLivre</td>
+                <td>@item.AnneeEdition</td>
+                <td>
+                    <a class='btn btn-primary btn-sm' href='/Livre/EditLivre?IdLivre=@item.IdLivre'>Edit</a>
+                    <a class='btn btn-danger btn-sm' href='/Livre/DeleteLivre?IdLivre=@item.IdLivre'>Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
