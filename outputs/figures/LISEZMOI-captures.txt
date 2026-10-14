@@ -1,0 +1,16 @@
+# Captures — a generer en local (1280x800)
+
+Lancez : dotnet run --project "Gestion des Livres\Gestion des Livres.csproj"
+Ouvrez http://localhost:5148 puis capturez :
+
+1. 01-accueil.png    -> /Index (carrousel + texte)
+2. 02-livres.png     -> /Livre/Livres (tableau 8 livres seed)
+3. 03-creer-livre.png -> /CreateLivre (formulaire + 3 dropdowns)
+4. 04-auteurs.png    -> /Auteurs (tableau 5 auteurs)
+5. 05-categories.png -> /Categories
+6. 06-editeurs.png   -> /Editeurs
+7. schema-bdd.png    -> diagramme SSMS (Auteur/Categorie/Editeur -> Livre)
+
+Commande Windows (Win+Shift+S) ou outil Capture. Placez les PNG ici :
+outputs/figures/.
+Le README et le rapport pointent deja vers ces 7 fichiers.
